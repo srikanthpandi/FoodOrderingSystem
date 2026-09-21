@@ -1,512 +1,388 @@
-::: {align="center"}
+# 🍽️ Food Ordering System
 
-🍔 Foodie Express
+> A powerful, console-based Food Ordering System built with **Core Java** | **OOP Principles** | **Collections** | **Exception Handling**
 
-A Console-Based Food Ordering System built with Core Java
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Console App](https://img.shields.io/badge/Console-Application-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Academic-blue?style=for-the-badge)
 
-<p>
+---
 
-<b>{=html}Java 21</b>{=html} • <b>{=html}OOP</b>{=html} •
-<b>{=html}Collections</b>{=html} • <b>{=html}Exception
-Handling</b>{=html} • <b>{=html}Service Architecture</b>{=html}
+## 📚 Table of Contents
+- [✨ Overview](#-overview)
+- [🎯 Features](#-features)
+- [💻 Technologies](#-technologies)
+- [📦 Project Structure](#-project-structure)
+- [🚀 Quick Start](#-quick-start)
+- [📋 Application Flow](#-application-flow)
+- [💾 Data Storage](#-data-storage)
+- [🔧 Architecture](#-architecture)
+- [🌟 Future Enhancements](#-future-enhancements)
 
-</p>
+---
 
-<p>
+## ✨ Overview
 
-A clean, modular food ordering application designed to demonstrate
-real-world Core Java concepts through a practical console project.
+The **Food Ordering System** is a feature-rich console application that demonstrates professional Java development practices. It enables customers to browse restaurants, manage their cart, place orders, and make payments—while admins manage restaurants, food items, and orders.
 
-</p>
+**Key Highlights:**
+- ✅ 100% Java-based (No external frameworks)
+- ✅ Service-oriented architecture
+- ✅ Custom exception handling
+- ✅ In-memory data management
+- ✅ Beautiful console UI with ANSI colors
 
-:::
+---
 
-📌 About the Project
+## 🎯 Features
 
-Foodie Express is a Core Java console-based Food Ordering System
-that simulates the basic workflow of a food delivery application.
+### 👨‍💼 Customer Features
+- 🏪 **Browse Restaurants** - View all available restaurants
+- 🍜 **Browse Food Items** - Explore menu items with prices
+- 🔍 **Search Functionality** - Find food by name
+- 🛒 **Cart Management** - Add/remove items from cart
+- 📦 **Order Placement** - Create orders from cart
+- 💳 **Payment Processing** - Complete transactions
+- 📄 **Order Details** - View order information
 
-Customers can browse restaurants and food, manage their cart, place
-orders, and make payments. Administrators can manage restaurants and
-food items and monitor orders and payments.
+### 🔐 Admin Features
+- 🏢 **Manage Restaurants** - Add, view, and update restaurants
+- 🍽️ **Manage Food Items** - Add, view, and update menu items
+- 📊 **View Orders** - Monitor all placed orders
+- 💰 **Payment Analytics** - Track all payments
+- 💵 **Revenue Reports** - View total successful payments
 
-Note: This is intentionally a console application. It uses Java
-ArrayList collections for in-memory storage and does not require a
-database, Spring Boot, or external frameworks.
+---
 
-✨ Highlights
+## 💻 Technologies
 
-👤 Customer          🛠️ Admin
+| Technology | Purpose |
+|-----------|---------|
+| **Java** | Core programming language |
+| **Collections** | ArrayList for data storage |
+| **OOP** | Classes, inheritance, encapsulation |
+| **Exception Handling** | Custom exceptions for error management |
+| **ANSI Colors** | Enhanced console UI |
+| **Scanner** | User input handling |
 
-Browse restaurants   Add restaurants
-Browse food          Update restaurants
-Search food          Add food
-Manage cart          Update food
-Place orders         View all orders
-Make payments        View payments
-View order details   View total payments
+---
 
-🖥️ Console Experience
+## 📦 Project Structure
 
-The project includes a custom ConsoleUI class to make the console
-interface cleaner and easier to navigate.
-
-╔══════════════════════════════════════════════════════╗
-║                                                      ║
-║              🍔  FOODIE EXPRESS  🍕                  ║
-║                                                      ║
-║          Your Favorite Food, Delivered!              ║
-║                                                      ║
-╚══════════════════════════════════════════════════════╝
-
-                 MAIN MENU
-
-        1. Customer
-        2. Admin
-        3. Exit
-
-------------------------------------------------------
-Choose an option:
-
-Customer Dashboard
-
-╔══════════════════════════════════════════════════════╗
-║                  CUSTOMER DASHBOARD                   ║
-╚══════════════════════════════════════════════════════╝
-
-  Welcome, Srikanth!
-
-  1. Browse Restaurants
-  2. Browse Food
-  3. Search Food
-  4. Add Food to Cart
-  5. View Cart
-  6. Remove from Cart
-  7. Place Order
-  8. Make Payment
-  9. View Order
-  0. Back
-
-------------------------------------------------------
-Choose an option:
-
-🧩 Features
-
-👤 Customer Module
-
-View available restaurants
-
-View food items
-
-Search food by name
-
-Add food to cart
-
-Increase quantity of existing cart items
-
-View cart and total amount
-
-Remove food from cart
-
-Place an order
-
-Make payment using UPI, Card, or Cash
-
-View order details
-
-🛠️ Admin Module
-
-Add restaurant
-
-View restaurants
-
-Update restaurant details
-
-Add food
-
-View food
-
-Update food details
-
-View all orders
-
-View all payments
-
-View total successful payments
-
-🛡️ Exception Handling
-
-The project uses custom checked exceptions for common application
-errors:
-
-FoodNotFoundException
-RestaurantNotFoundException
-CartEmptyException
-OrderNotFoundException
-PaymentFailedException
-
-🏗️ Project Architecture
-
-The application follows a simple Model → Service → Main/UI
-structure.
-
-                    🍔 FOODIE EXPRESS
-                           │
-                    ┌──────┴──────┐
-                    │             │
-                Customer        Admin
-                    │             │
-                    └──────┬──────┘
-                           │
-                     Main.java
-                           │
-                    ConsoleUI.java
-                           │
-                 ┌─────────┴─────────┐
-                 │                   │
-             Services             Exceptions
-                 │
-        ┌────────┼────────┬──────────┐
-        │        │        │          │
-      User   Restaurant  Food      Cart
-        │        │        │          │
-        └────────┴────────┴──────────┘
-                           │
-                      OrderService
-                           │
-                     PaymentService
-                           │
-                    ArrayList Storage
-
-📂 Project Structure
-
-src
-└── com.foodordering
+```
+src/
+└── com.foodordering/
+    ├── Main.java                          # Application entry point
+    ├── ConsoleUI.java                     # UI/UX formatting
     │
-    ├── Main.java
-    ├── ConsoleUI.java
+    ├── user/
+    │   ├── User.java                      # User data model
+    │   └── UserService.java               # User operations
     │
-    ├── user
-    │   ├── User.java
-    │   └── UserService.java
+    ├── restaurant/
+    │   ├── Restaurant.java                # Restaurant model
+    │   └── RestaurantService.java         # Restaurant operations
     │
-    ├── restaurant
-    │   ├── Restaurant.java
-    │   └── RestaurantService.java
+    ├── food/
+    │   ├── Food.java                      # Food item model
+    │   └── FoodService.java               # Food operations
     │
-    ├── food
-    │   ├── Food.java
-    │   └── FoodService.java
+    ├── cart/
+    │   ├── Cart.java                      # Shopping cart
+    │   ├── CartItem.java                  # Individual cart item
+    │   └── CartService.java               # Cart operations
     │
-    ├── cart
-    │   ├── Cart.java
-    │   ├── CartItem.java
-    │   └── CartService.java
+    ├── order/
+    │   ├── Order.java                     # Order model
+    │   └── OrderService.java              # Order operations
     │
-    ├── order
-    │   ├── Order.java
-    │   └── OrderService.java
+    ├── payment/
+    │   ├── Payment.java                   # Payment model
+    │   └── PaymentService.java            # Payment operations
     │
-    ├── payment
-    │   ├── Payment.java
-    │   └── PaymentService.java
-    │
-    └── exceptions
+    └── exceptions/
         ├── FoodNotFoundException.java
         ├── RestaurantNotFoundException.java
         ├── CartEmptyException.java
         ├── OrderNotFoundException.java
         └── PaymentFailedException.java
+```
 
-🔄 Application Flow
+---
 
-Customer Flow
+## 🚀 Quick Start
 
+### Prerequisites
+- ✅ Java Development Kit (JDK 8 or higher)
+- ✅ IDE (Eclipse, IntelliJ, VS Code) OR Command Line
+
+### Option 1️⃣ : Using Eclipse
+
+1. **Open Eclipse** and import the project
+2. **Navigate** to `com.foodordering.Main.java`
+3. **Right-click** → `Run As` → `Java Application`
+4. **Interact** using the console menu
+
+### Option 2️⃣ : Using Command Line
+
+```bash
+# Compile
+javac -d bin src/com/foodordering/**/*.java
+
+# Run
+java -cp bin com.foodordering.Main
+```
+
+---
+
+## 📋 Application Flow
+
+### 🏠 System Architecture
+
+```
+         🍽️ FOOD ORDERING SYSTEM 🍽️
+                    │
+         ┌──────────┴──────────┐
+         │                     │
+      👤 Customer          👨‍💼 Admin
+         │                     │
+    ┌────┼─────┐          ┌────┼─────┐
+    │    │     │          │    │     │
+  🍜 Food 🛒 Cart 📦 Order 🏢 Restaurant 🍽️ Food 💰 Payments
+    │    │     │          │    │     │
+    └────┼─────┘          └────┼─────┘
+         │                     │
+         └─────────┬───────────┘
+                   │
+              💳 Payment
+```
+
+### 📊 Customer Journey
+
+```
 Main Menu
-    │
-    ▼
-Customer
-    │
-    ▼
-Enter User ID
-    │
-    ▼
+   ↓
+Select User (ID: 101 or 102)
+   ↓
 Customer Dashboard
-    │
-    ├── Browse Restaurants
-    ├── Browse Food
-    ├── Search Food
-    │
-    ├── Add Food to Cart
-    │          │
-    │          ▼
-    │       View Cart
-    │          │
-    │          ▼
-    │       Place Order
-    │          │
-    │          ▼
-    │       Make Payment
-    │          │
-    │          ▼
-    │       View Order
-    │
-    └── Back
+   ├─ 🏪 Browse Restaurants
+   ├─ 🍜 View Food Items
+   ├─ 🔍 Search Food by Name
+   ├─ 🛒 Add to Cart
+   ├─ 📋 View Cart
+   ├─ ✂️  Remove from Cart
+   ├─ 📦 Place Order
+   ├─ 💳 Make Payment
+   └─ 📄 View Order Details
+```
 
-Admin Flow
+### 🔐 Admin Journey
 
+```
 Main Menu
-    │
-    ▼
+   ↓
+Select Admin
+   ↓
 Admin Dashboard
-    │
-    ├── Add Restaurant
-    ├── View Restaurants
-    ├── Update Restaurant
-    │
-    ├── Add Food
-    ├── View Food
-    ├── Update Food
-    │
-    ├── View All Orders
-    ├── View All Payments
-    └── View Total Payments
-
-🧠 Core Java Concepts Demonstrated
-
-This project was designed to demonstrate practical Java fundamentals:
-
-Object-Oriented Programming
-
-Classes and Objects
-
-Encapsulation
-
-Constructors
-
-Getters and Setters
-
-Object relationships
-
-Separation of responsibilities
-
-Collections
-
-List<User>
-List<Restaurant>
-List<Food>
-List<Cart>
-List<Order>
-List<Payment>
-
-The project primarily uses:
-
-ArrayList
-
-Exception Handling
-
-try {
-    // operation
-} catch (FoodNotFoundException e) {
-    // handle error
-}
-
-Custom Exceptions
-
-Application-specific exceptions are created instead of relying only on
-generic exceptions.
-
-Control Flow
-
-if / else
-
-switch
-
-for
-
-Enhanced for
-
-while
-
-Console Input
-
-Scanner scanner = new Scanner(System.in);
-
-💾 Data Storage
-
-The current version uses in-memory collections.
-
-Application starts
-      ↓
-Sample data loaded
-      ↓
-Data stored in ArrayList
-      ↓
-User interacts with application
-      ↓
-Application closes
-      ↓
-Data is cleared
-
-There is currently:
-
-❌ No MySQL
-
-❌ No JDBC
-
-❌ No external files
-
-❌ No Spring Boot
-
-❌ No external APIs
-
-This keeps the project focused on Core Java.
-
-🚀 Getting Started
-
-Requirements
-
-Java JDK 21 or compatible JDK
-
-Eclipse IDE or any Java IDE
-
-Git (optional, for version control)
-
-Run in Eclipse
-
-Open the project in Eclipse.
-
-Make sure the src folder contains the com.foodordering package.
-
-Open:
-
-src/com/foodordering/Main.java
-
-Right-click Main.java.
-
-Select:
-
-Run As → Java Application
-
-Use the console menu to operate the application.
-
-🧪 Sample Data
-
-Users
-
- ID Name       Mobile
-
-101 Srikanth   9876543210
-102 Rahul      9876543211
-
-Restaurants
-
-ID Restaurant   Location
-
- 1 Paradise     Hyderabad
- 2 Mehfil       Secunderabad
-
-Food
-
- ID Food                Price   Restaurant
-
-101 Chicken Biryani      ₹250     Paradise
-102 Veg Biryani          ₹180     Paradise
-103 Chicken 65           ₹220       Mehfil
-104 Paneer Biryani       ₹200       Mehfil
-
-🧾 Example Order Flow
-
-Customer
-   ↓
-Select Food
-   ↓
-Add to Cart
-   ↓
-View Cart
-   ↓
-Place Order
-   ↓
-Order ID Generated
-   ↓
-Select Payment Method
-   ↓
-Payment Successful
-   ↓
-Order Status → PAID
-
-Example:
-
-Order ID       : 1001
-Total Amount   : ₹500
-Payment Method : UPI
-Payment Status : SUCCESS
-Order Status   : PAID
-
-🔮 Future Enhancements
-
-The project can be extended with:
-
-MySQL database using JDBC
-
-User authentication
-
-Admin authentication
-
-Food categories
-
-Restaurant-based food filtering
-
-Order cancellation
-
-Order status tracking
-
-Delivery address
-
-Customer order history
-
-Payment date and time
-
-Invoice generation
-
-Quantity update from cart
-
-GUI version using JavaFX/Swing
-
-Web version using Spring Boot
-
-REST APIs
-
-🎯 Learning Objective
-
-The main purpose of this project is to build a practical application
-while strengthening Core Java and OOP fundamentals.
-
-It demonstrates how individual Java concepts can be combined into a
-small real-world system instead of being implemented as isolated
-examples.
-
-Core Java
-    +
-OOP
-    +
-Collections
-    +
-Exception Handling
-    +
-Service-Based Structure
+   ├─ ➕ Add Restaurant
+   ├─ 📍 View Restaurants
+   ├─ ✏️  Update Restaurant
+   ├─ ➕ Add Food Item
+   ├─ 📜 View All Food
+   ├─ ✏️  Update Food
+   ├─ 📦 View All Orders
+   ├─ 💰 View All Payments
+   └─ 💵 View Total Revenue
+```
+
+---
+
+## 💾 Data Storage
+
+All data is stored in **memory** using Java Collections:
+
+| Data Type | Storage |
+|-----------|---------|
+| 👤 Users | ArrayList\<User\> |
+| 🏢 Restaurants | ArrayList\<Restaurant\> |
+| 🍜 Food Items | ArrayList\<Food\> |
+| 🛒 Shopping Carts | ArrayList\<Cart\> |
+| 📦 Orders | ArrayList\<Order\> |
+| 💳 Payments | ArrayList\<Payment\> |
+
+> 📌 **Note:** Data persists only during the session. It resets when the application stops.
+
+---
+
+## 👥 Sample Data
+
+### Pre-loaded Users
+| ID | Name |
+|----|------|
+| 101 | Srikanth |
+| 102 | Rahul |
+
+### Sample Restaurants
+| ID | Name | City |
+|----|------|------|
+| 1 | 🍛 Paradise | Hyderabad |
+| 2 | 🍴 Mehfil | Secunderabad |
+
+### Sample Food Menu
+| ID | Item | Price |
+|----|------|-------|
+| 101 | 🍛 Chicken Biryani | ₹250 |
+| 102 | 🥘 Veg Biryani | ₹180 |
+| 103 | 🔥 Chicken 65 | ₹220 |
+| 104 | 🧀 Paneer Biryani | ₹200 |
+
+---
+
+## 🎓 Core Concepts Demonstrated
+
+- ✅ **OOP Principles**
+  - Encapsulation (Private fields, getters/setters)
+  - Abstraction (Service layer design)
+  - Inheritance-ready package structure
+  
+- ✅ **Collections Framework**
+  - ArrayList for dynamic data storage
+  - Iteration with enhanced for loops
+  
+- ✅ **Exception Handling**
+  - Custom exception classes
+  - Try-catch blocks for error management
+  
+- ✅ **Control Flow**
+  - Switch statements for menu navigation
+  - Conditional logic for business operations
+  
+- ✅ **Architecture Patterns**
+  - Service-layer design pattern
+  - Separation of concerns (Models vs Services)
+
+---
+
+## 🔧 Architecture
+
+### Layered Architecture Pattern
+
+```
+┌─────────────────────────────────┐
+│      Main & ConsoleUI          │  ← User Interface Layer
+├─────────────────────────────────┤
+│    Service Classes              │  ← Business Logic Layer
+│ (FoodService, CartService, ...) │
+├─────────────────────────────────┤
+│    Model Classes                │  ← Data Model Layer
+│ (Food, Cart, User, ...)         │
+├─────────────────────────────────┤
+│   ArrayList Collections         │  ← Data Storage Layer
+└─────────────────────────────────┘
+```
+
+### Example: Food Management
+
+```
+Food (Model)
     ↓
-Food Ordering System
+FoodService (Business Logic)
+    ↓
+Main/ConsoleUI (Presentation)
+    ↓
+ArrayList Storage
+```
 
-👨‍💻 Author
+**Benefits:**
+- 🎯 Clear separation of concerns
+- 🔄 Easy to test and maintain
+- 📈 Scalable architecture
+- 🔌 Easy to add persistence layer later
 
-Srikanth Pandi
+---
 
-Computer Science Engineering
+## 🌟 Future Enhancements
 
-::: {align="center"}
+### Phase 1: Database Integration
+- 🗄️ MySQL database integration
+- 🔗 JDBC for database operations
 
-🍔 Foodie Express
+### Phase 2: Security & User Management
+- 🔐 User authentication
+- 🔑 Password-based admin login
+- 👤 Secure session management
 
-Built with Java • Designed for learning • Ready for enhancement
-:::
+### Phase 3: Enhanced Features
+- 📂 Food categories
+- 🏪 Restaurant-based food filtering
+- ❌ Order cancellation
+- 📊 Order status tracking (Pending → Preparing → Ready → Delivered)
+- 🔢 Quantity management in cart
+- 📍 Delivery address tracking
+
+### Phase 4: Analytics & Reporting
+- 📈 Customer order history
+- 📄 Bill/Invoice generation
+- 💰 Payment analytics and reports
+- ⏰ Payment date/time tracking
+
+### Phase 5: UI Enhancement
+- 🖥️ GUI using Swing/JavaFX
+- 🌐 Web version using Spring Boot
+- 📱 REST API development
+
+---
+
+## 🏆 Learning Outcomes
+
+By studying this project, you'll master:
+
+✅ Core Java fundamentals  
+✅ Object-Oriented Programming principles  
+✅ Design patterns (Service Layer)  
+✅ Exception handling best practices  
+✅ Collections Framework  
+✅ Professional code organization  
+✅ Console UI development  
+✅ Multi-component application design  
+
+---
+
+## 👨‍💻 Author
+
+**Srikanth Pandi**  
+*Computer Science Engineering*
+
+---
+
+## 📄 License
+
+This project is created for **learning, academic, and portfolio purposes**.
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork this project, create feature branches, and submit pull requests for:
+- Bug fixes
+- Feature enhancements
+- Code optimizations
+- Documentation improvements
+
+---
+
+## 💡 Getting Help
+
+- 📖 Refer to the code comments
+- 🔍 Check the project structure for examples
+- 📝 Review custom exception classes for error handling
+
+---
+
+<div align="center">
+
+**Made with ❤️ for learning Java**
+
+⭐ If you found this project helpful, please consider giving it a star!
+
+</div>
